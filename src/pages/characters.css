@@ -1,0 +1,16 @@
+
+
+.back-button{
+    background: linear-gradient(90deg, #eeff00 0%, #232526 100%);
+    border-radius: 30px;
+    box-shadow: 0 0 20px rgb(195, 236, 12);
+    color: #000000;
+    border: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 0.75rem 2.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+
+
+}
