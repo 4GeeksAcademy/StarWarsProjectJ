@@ -20,7 +20,7 @@ export const Characters = () => {
         fetch(`https://swapi.tech/api/people/${uid}`)
             .then((resp) => resp.json())
             .then(data => {
-                dispatch({ type: "get_characters", payload: data.result })
+                dispatch({ type: "get_characters", payload: data.result.properties })
 
             })
             .catch(error => {
@@ -57,26 +57,26 @@ export const Characters = () => {
 
                                 <div className="col-md-8">
                                     <h2 style={{ fontFamily: "'Orbitron', monospace", fontWeight: "bold", letterSpacing: "3px", color: "rgba(251, 255, 0, 0.99)", textShadow: "0 0 10px rgba(251, 255, 0, 0.63)" }}>
-                                        {store.people.properties.name}
+                                        {store.people.name}
                                     </h2>
                                     <hr style={{ borderTop: "2px dashed rgb(251, 255, 0)", width: "60%" }} />
-                                    <div className="fs-5 mb-3">
+                                    {/* <div className="fs-5 mb-3">
                                         <strong>Descripción:</strong> <span style={{ color: "#fff" }}>{store.people.description}</span>
+                                    </div> */}
+                                    <div className="fs-5 mb-3">
+                                        <strong>Altura:</strong> <span style={{ color: "#fff" }}>{store.people.height} cm</span>
                                     </div>
                                     <div className="fs-5 mb-3">
-                                        <strong>Altura:</strong> <span style={{ color: "#fff" }}>{store.people.properties.height} cm</span>
+                                        <strong>Peso:</strong> <span style={{ color: "#fff" }}>{store.people.mass} kg</span>
                                     </div>
                                     <div className="fs-5 mb-3">
-                                        <strong>Peso:</strong> <span style={{ color: "#fff" }}>{store.people.properties.mass} kg</span>
+                                        <strong>Color de piel:</strong> <span style={{ color: "#fff" }}>{store.people.skin_color}</span>
                                     </div>
                                     <div className="fs-5 mb-3">
-                                        <strong>Color de piel:</strong> <span style={{ color: "#fff" }}>{store.people.properties.skin_color}</span>
+                                        <strong>Color de ojos:</strong> <span style={{ color: "#fff" }}>{store.people.eye_color}</span>
                                     </div>
                                     <div className="fs-5 mb-3">
-                                        <strong>Color de ojos:</strong> <span style={{ color: "#fff" }}>{store.people.properties.eye_color}</span>
-                                    </div>
-                                    <div className="fs-5 mb-3">
-                                        <strong>Año de nacimiento:</strong> <span style={{ color: "#fff" }}>{store.people.properties.birth_year}</span>
+                                        <strong>Año de nacimiento:</strong> <span style={{ color: "#fff" }}>{store.people.birth_year}</span>
                                     </div>
                                 </div>
                             </div>

@@ -72,14 +72,10 @@ export const Home = () => {
 					{Array.isArray(store.people) && store.people?.map((chara,index)=>{
 						return(
 							<div key={index} className="card-main m-3 p-3 bg-secondary" >
-								<div className="card-details ">
-									<h5 className="card-title">{chara.name}</h5>
-									<img
-										src={`https://raw.githubusercontent.com/tbone849/star-wars-guide/refs/heads/master/build/assets/img/characters/${chara.uid}.jpg`}
-										alt="Characters" className="characterimg" />
-									
-								</div>
-								
+								<img
+									src={`https://raw.githubusercontent.com/tbone849/star-wars-guide/refs/heads/master/build/assets/img/characters/${chara.uid}.jpg`}
+									alt="Characters" className="characterimg" />
+								<h5 className="card-title">{chara.name}</h5>
 								<Link to={"/characters/" + chara.uid}>
                         			<button className="card-button">MORE</button>
                         		</Link>
@@ -129,7 +125,7 @@ export const Home = () => {
 									<Link to={"/planets/" + chara.uid}>
                         				<button className="card-button">MORE</button>
                         			</Link>
-									<div className="card-fav" >
+									<div className="card-fav">
 										<BtnFav className="card-fav" linked= {{uid:chara.uid, name:chara.name, type: "vehicles"}}/>
 									</div>
 								
